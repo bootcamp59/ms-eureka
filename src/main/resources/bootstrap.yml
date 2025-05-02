@@ -3,6 +3,11 @@ spring:
     name: ms-eureka
   cloud:
     config:
+      fail-fast: false
+      retry:
+        max-attempts: 10
+        max-interval: 2000
       enabled: true
-      uri: http://localhost:8888
+      uri: http://config-server:8888
       profile: dev
+      label: develop
